@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSTeamsEventsNotifyer", "MSTeamsEventsNotifyer\MSTeamsEventsNotifyer.csproj", "{6639D5C4-07D5-4819-AEB0-3073E2496771}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6639D5C4-07D5-4819-AEB0-3073E2496771}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6639D5C4-07D5-4819-AEB0-3073E2496771}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6639D5C4-07D5-4819-AEB0-3073E2496771}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6639D5C4-07D5-4819-AEB0-3073E2496771}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BA4BD551-1499-4986-800F-3A445D642A7A}
+	EndGlobalSection
+EndGlobal
