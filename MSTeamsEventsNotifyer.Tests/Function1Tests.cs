@@ -15,7 +15,7 @@ namespace MSTeamsEventsNotifyer.Tests
             public async void Http_trigger_should_return_help()
             {
                 var request = TestFactory.CreateHttpRequest();
-                var response = (OkObjectResult)await Function1.Run(request, logger.Object);
+                var response = (OkObjectResult)await MessagesTrigger.Run(request, logger.Object);
                 Assert.Equal("This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response.", response.Value);
             }
 
@@ -24,7 +24,7 @@ namespace MSTeamsEventsNotifyer.Tests
             public async void Http_trigger_should_return_known_string_from_member_data(string queryStringKey, string queryStringValue)
             {
                 var request = TestFactory.CreateHttpRequest(queryStringKey, queryStringValue);
-                var response = (OkObjectResult)await Function1.Run(request, logger.Object);
+                var response = (OkObjectResult)await MessagesTrigger.Run(request, logger.Object);
                 Assert.Equal($"Hello, {queryStringValue}. This HTTP triggered function executed successfully.", response.Value);
             }
         }
