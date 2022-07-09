@@ -11,7 +11,7 @@ env:
   WORKING_DIRECTORY: MSTeamsEventsNotifyer
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET Core
@@ -28,5 +28,5 @@ jobs:
       uses: Azure/functions-action@v1
       with:
         app-name: ${{ env.AZURE_FUNCTIONAPP_NAME }}
-        publish-profile: ${{ secrets.func_EventsNotifyer_dev_a833 }}
+        publish-profile: ${{ secrets.func_EventsNotifyer_dev_a90c }}
         package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}

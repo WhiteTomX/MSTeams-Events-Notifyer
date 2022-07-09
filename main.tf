@@ -56,15 +56,17 @@ resource "azurerm_service_plan" "this" {
   name                = "plan-${var.name}-${var.stage}"
   resource_group_name = azurerm_resource_group.this.name
   location            = azurerm_resource_group.this.location
-  os_type             = "Linux"
+  os_type             = "Windows"
   sku_name            = "Y1"
 }
 
-resource "azurerm_linux_function_app" "this" {
+resource "azurerm_windows_function_app" "this" {
   name                = "func-${var.name}-${var.stage}"
   resource_group_name = azurerm_resource_group.this.name
   location            = azurerm_resource_group.this.location
+
   storage_account_name = azurerm_storage_account.this.name
+  storage_account_access_key = azurerm_storage_account.this.primary_access_key
 
   service_plan_id      = azurerm_service_plan.this.id
 
@@ -73,10 +75,14 @@ resource "azurerm_linux_function_app" "this" {
   app_settings = {
     MS_APP_ID = azuread_application.this.application_id
     MS_APP_PASSWORD = azuread_application_password.this.value
+    WEBSITE_RUN_FROM_PACKAGE = 1
   }
 
   site_config {
     application_insights_connection_string = azurerm_application_insights.this.connection_string
+    application_stack {
+      dotnet_version = "6"
+    }
   }
 }
 
